@@ -1,5 +1,4 @@
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 
 /**
@@ -23,9 +22,11 @@ public class Square {
         this.x = x;
         this.y = y;
 
+
+
         rectangle = new Rectangle(SQUARE_SIZE, SQUARE_SIZE, Color.GREEN);
-        rectangle.setX(this.x *SQUARE_SIZE);
-        rectangle.setY(this.y *SQUARE_SIZE);
+        rectangle.setX(this.x * (SQUARE_SIZE));
+        rectangle.setY(this.y * (SQUARE_SIZE));
         GardenController.addChild(rectangle);
     }
 

@@ -15,7 +15,8 @@ public abstract class Bee {
         this.health = health;
     }
 
-
+    private void show(){
+    }
 
     public void die(){
         die = true;

@@ -10,10 +10,11 @@ public class GardenController {
 
     private static GardenController controller = null;
 
-    public static final int SQUARE_SIZE = 700;
+    public static final int SQUARE_SIZE = 55;
+    private static final int BOARD_WIDTH = 10;
     private List<Flower> flowers = new ArrayList<>();
     private List<Bee> bees = new ArrayList<>();
-    private Square square;
+    private List<Square> squares = new ArrayList<>();
 
     @FXML
     private Pane theGarden;
@@ -28,8 +29,10 @@ public class GardenController {
                 bee = new RandomBee(0,0, false, 10);
             }
             bees.add(bee);
+            controller.getSquare(bee.getX(), bee.getY()).placeBee(bee);
         }
     }
+
 
     private void createFlowers(){
         for (int index = 0; index<10; index++){
@@ -44,8 +47,13 @@ public class GardenController {
     }
 
 
-    private void createSquare() {
-        square = new Square(SQUARE_SIZE, SQUARE_SIZE);
+    private void createSquares() {
+        for(int indRow = 0; indRow < BOARD_WIDTH; indRow++) {
+            for(int indCol = 0; indCol < BOARD_WIDTH; indCol++) {
+                Square square = new Square(indCol, indRow);
+                squares.add(square);
+            }
+        }
     }
 
 
@@ -69,11 +77,12 @@ public class GardenController {
     public static void removeChild(Node node) {
         getTheController().instanceRemoveChild(node);
     }
+
     private void instanceRemoveChild(Node node) {
         theGarden.getChildren().remove(node);
     }
 
-    public static Square getPosition(int x, int y) {
+    public static Square getSquare(int x, int y) {
         return getTheController().instanceGetSquare(x, y);
     }
 
@@ -81,7 +90,7 @@ public class GardenController {
         if(!isValidPosition(x, y)) {
             throw new IllegalArgumentException("This square does not exist: "+x+ " "+ y);
         }
-        return square;
+    return squares.get(y*BOARD_WIDTH + x);
     }
 
     public static boolean isValidPosition(int x, int y) {
@@ -91,48 +100,13 @@ public class GardenController {
         return x >= 0 && y >= 0 && x < SQUARE_SIZE && y < SQUARE_SIZE;
     }
 
-/*    private void addBees(){
-        for (int index = 0; index<10; index++){
-            Bee bee;
-            if (index<=4){
-                bee = new LineBee("images/garden_jpgs/bee-1.jpg", image);
-            } else {
-                bee = new RandomBee("images/garden_jpgs/bee-2.jpg");
-            }
-            ImageView beeImage = new ImageView(bee.getImage());
-            bees.add(bee);
-        }
-    }
-
-
-    private void removeBee(Bee bee){
-    }
-
-    private void addFlowers(){
-        for (int index = 0; index<16; index++){
-            Flower flower;
-            if (index <=7){
-                flower = new RegenFlower("images/garden_jpgs/daisy.jpg");
-            } else{
-                flower = new DrainFlower("images/garden_jpgs/rose.jpg");
-            }
-            flowers.add(flower);
-        }
-    }
-
-*/
-
-
-
-    //create imageView objects
 
 
     @FXML
     public void initialize(){
-//        theGarden = new Pane();
         controller = this;
 
-        createSquare();
+        createSquares();
 
         createBees();
         createFlowers();
