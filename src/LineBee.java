@@ -28,8 +28,6 @@ public class LineBee extends Bee{
         } else {
             setX(getX()-1);
         }
-
-
     }
 
     @Override
@@ -39,5 +37,4 @@ public class LineBee extends Bee{
         }
         return new Image("garden_jpgs/bee-1.jpg");
     }
-
 }

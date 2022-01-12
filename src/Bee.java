@@ -17,7 +17,6 @@ public abstract class Bee {
 
     public void die(){
         die = true;
-
     }
 
     public void setHealth(){
@@ -55,7 +54,4 @@ public abstract class Bee {
     public abstract void move();
 
     public abstract Image getImage();
-
-
-
 }

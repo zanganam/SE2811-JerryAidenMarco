@@ -35,7 +35,6 @@ public class GardenController {
         }
     }
 
-
     private void createFlowers(){
         for (int index = 0; index<10; index++){
             Flower flower;
@@ -47,9 +46,6 @@ public class GardenController {
             flowers.add(flower);
         }
     }
-
-
-
 
     @FXML
     public void initialize(){

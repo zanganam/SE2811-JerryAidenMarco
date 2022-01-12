@@ -15,7 +15,6 @@ public abstract class Flower {
         this.health = health;
     }
 
-
     public void die(){
         die = true;
     }

@@ -14,6 +14,4 @@ public class RegenFlower extends Flower{
     public Image getImage() {
         return new Image("garden_jpgs/daisy.jpg");
     }
-
-
 }

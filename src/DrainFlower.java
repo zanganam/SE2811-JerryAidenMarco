@@ -14,5 +14,4 @@ public class DrainFlower extends Flower{
     public Image getImage() {
         return new Image("garden_jpgs/rose.jpg");
     }
-
 }
