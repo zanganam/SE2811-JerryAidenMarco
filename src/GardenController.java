@@ -138,6 +138,7 @@ public class GardenController {
 
             health.setText(String.valueOf(bees.get(i).getHealth()));
             health.setMinSize(100,100);
+            health.setTextFill(Color.RED);
 
             pane.getChildren().add(health);
             pane.getChildren().add(beeImage);
