@@ -11,6 +11,11 @@ public class RegenFlower extends Flower{
     }
 
     @Override
+    public int getDamage() {
+        return damage;
+    }
+
+    @Override
     public Image getImage() {
         return new Image("garden_jpgs/daisy.jpg");
     }

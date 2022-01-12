@@ -15,45 +15,15 @@ public abstract class Flower {
         this.health = health;
     }
 
-    public void die(){
-        die = true;
-    }
-
-    public void setHealth(){
-        this.health = 10;
-    }
-
-    public int getHealth(int health){
-        return health;
-    }
-
-    private void drainHealth(int damage){
-        health-=damage;
-    }
-
-    private void regenHealth(int flowerHealing){
-        health+= flowerHealing;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
     public int getX(){
         return x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 
     public int getY(){
         return y;
     }
 
-    public int getDamage(){
-        return damage;
-    }
+    public abstract int getDamage();
 
     public abstract Image getImage();
 }
