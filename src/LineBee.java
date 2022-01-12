@@ -14,9 +14,13 @@ public class LineBee extends Bee{
     public void move() {
         if (getY() == 0){
             isDown = true;
+        } else if (getY()==5){
+            isDown = false;
         }
         if (getX()==0){
             isRight = true;
+        } else if(getX()==5){
+            isRight = false;
         }
         if (isDown){
             setY(getY()+1);

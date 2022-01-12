@@ -21,6 +21,7 @@ public class GardenController {
     private static final int BOARD_WIDTH = 10;
     private List<Flower> flowers = new ArrayList<>();
     private List<Bee> bees = new ArrayList<>();
+
 //    private List<Square> squares = new ArrayList<>();
 
     @FXML
@@ -132,7 +133,7 @@ public class GardenController {
             beeImage.setImage(bees.get(i).getImage());
             beeImage.setFitHeight(30);
             beeImage.setFitWidth(30);
-            Rectangle healtbar = new Rectangle(200.0, 50.0, Color.BLUE);
+            Rectangle healtbar = new Rectangle(200.0, 100.0, Color.RED);
             pane.setSpacing(5);
             pane.getChildren().add(healtbar);
             pane.getChildren().add(beeImage);
@@ -169,9 +170,6 @@ public class GardenController {
                 }
                 refresh();
             }
-            System.out.println("X: " + bees.get(bees.size()-1).getX());
-            System.out.println("Y: " + bees.get(bees.size()-1).getY());
-            System.out.println("++++++++++++++++++++++++++++++++++++++");
             collision();
         }
     }
