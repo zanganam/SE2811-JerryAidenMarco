@@ -23,16 +23,9 @@ public class Square {
         this.x = x;
         this.y = y;
 
-        Paint paint;
-        if((this.y + this.x)%2==0) {
-            paint = Color.BLACK.brighter().brighter().brighter().brighter();
-        } else {
-            paint = Color.RED.darker().darker();
-        }
-        rectangle = new Rectangle(SQUARE_SIZE, SQUARE_SIZE, paint);
+        rectangle = new Rectangle(SQUARE_SIZE, SQUARE_SIZE, Color.GREEN);
         rectangle.setX(this.x *SQUARE_SIZE);
         rectangle.setY(this.y *SQUARE_SIZE);
-        rectangle.setOnMouseClicked(event -> tryMovePieceHere());
         GardenController.addChild(rectangle);
     }
 
@@ -44,40 +37,50 @@ public class Square {
         return y;
     }
 
-    public String toString() {
-        return "Square at "+x+", "+y;
-    }
 
-    private void tryMovePieceHere() {
+/*    private void tryMovePieceHere() {
         GardenController.tryMovePiece(this);
-    }
+    }*/
 
     /**
      * @return The piece currently sitting on this square.
      * null if this square is empty.
      */
-/*
-    public Bee getPiece() {
+
+    public Bee getBee() {
         return bee;
     }
 
-    public Flower getPiece(){
+    public Flower getFlower(){
         return flower;
     }
-*/
 
-/*    public void removePiece() {
-        if(piece == null) {
+    public void removeBee() {
+        if(bee == null) {
             throw new UnsupportedOperationException("Cannot remove piece from an empty square.");
         }
-        piece = null;
+        bee = null;
     }
 
-    public void placePiece(Piece piece) {
-        if(piece == null) {
+    public void removeFlower(){
+        if(flower == null) {
+            throw new UnsupportedOperationException("Cannot remove piece from an empty square.");
+        }
+        flower = null;
+    }
+
+    public void placeBee(Bee bee) {
+        if(bee == null) {
             throw new IllegalArgumentException("No piece provided.");
         }
-        this.piece = piece;
-    }*/
+        this.bee = bee;
+    }
+
+    public void placeFlower(Flower flower) {
+        if(flower == null) {
+            throw new IllegalArgumentException("No piece provided.");
+        }
+        this.flower = flower;
+    }
 
 }

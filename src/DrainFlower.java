@@ -6,9 +6,8 @@ public class DrainFlower extends Flower{
     protected Boolean die;
     protected int health;
 
-    public DrainFlower(boolean die, int health) {
-        this.die = die;
-        this.health = health;
+    public DrainFlower(int x, int y, boolean die, int health) {
+        super(x, y, die, health);
         this.image = new Image("images/garden_jpgs/rose.jpg");
     }
 }

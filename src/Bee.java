@@ -9,17 +9,9 @@ public abstract class Bee {
     protected Image image;
 
 
-    public Bee(int x, int y, boolean die, int health, Image image){
-        this.x = x;
-        this.y = y;
-        this.die = die;
-        this.health = health;
-        this.image = image;
-
+    public Bee(int x, int y, boolean die, int health) {
     }
 
-    public Bee() {
-    }
 
     public void setDie(boolean die){
         this.die = false;
@@ -62,8 +54,6 @@ public abstract class Bee {
     }
 
     public abstract void move();
-
-    public abstract void setImage();
 
 
 

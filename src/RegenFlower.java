@@ -6,9 +6,8 @@ public class RegenFlower extends Flower{
     protected Boolean die;
     protected int health;
 
-    public RegenFlower(boolean die, int health) {
-        this.die = die;
-        this.health = health;
+    public RegenFlower(int x, int y, boolean die, int health) {
+        super(x, y, die, health);
         this.image = new Image("images/garden_jpgs/daisy.jpg");
     }
 }

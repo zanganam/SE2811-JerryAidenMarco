@@ -1,29 +1,24 @@
 import javafx.fxml.FXML;
-import javafx.scene.image.ImageView;
+import javafx.scene.Node;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Rectangle;
 
 import java.util.List;
 
 public class GardenController {
 
+    private static GardenController controller = null;
+
     public static final int SQUARE_SIZE = 700;
     private List<Flower> flowers;
     private List<Bee> bees;
+    private Square square;
 
     @FXML
     private Pane theGarden;
 
-    public static void addChild(Rectangle rectangle) {
-    }
 
-    public static void tryMovePiece(Square square) {
-    }
-
-
-    private void createBee(){
+    private void createBees(){
         for (int index = 0; index < 7; index++){
             Bee bee;
             if (index<=3){
@@ -33,6 +28,66 @@ public class GardenController {
             }
             bees.add(bee);
         }
+    }
+
+    private void createFlowers(){
+        for (int index = 0; index<10; index++){
+            Flower flower;
+            if ((index%2)==0){
+                flower = new RegenFlower();
+            } else {
+                flower = new DrainFlower();
+            }
+            flowers.add(flower);
+        }
+    }
+
+
+    private void createSquare() {
+        square = new Square(SQUARE_SIZE, SQUARE_SIZE);
+    }
+
+
+    public static GardenController getTheController() {
+        if(controller == null) {
+            throw new IllegalStateException("theController should not be accessed before the " +
+                    "gameboard is initialized.");
+        }
+        return controller;
+    }
+
+
+    public static void addChild(Node node) {
+        getTheController().instanceAddChild(node);
+    }
+
+    private void instanceAddChild(Node node) {
+        theGarden.getChildren().add(node);
+    }
+
+    public static void removeChild(Node node) {
+        getTheController().instanceRemoveChild(node);
+    }
+    private void instanceRemoveChild(Node node) {
+        theGarden.getChildren().remove(node);
+    }
+
+    public static Square getPosition(int x, int y) {
+        return getTheController().instanceGetSquare(x, y);
+    }
+
+    private Square instanceGetSquare(int x, int y) {
+        if(!isValidPosition(x, y)) {
+            throw new IllegalArgumentException("This square does not exist: "+x+ " "+ y);
+        }
+        return square;
+    }
+
+    public static boolean isValidPosition(int x, int y) {
+        return getTheController().instanceIsValidPosition(x,y);
+    }
+    private boolean instanceIsValidPosition(int x, int y) {
+        return x >= 0 && y >= 0 && x < SQUARE_SIZE && y < SQUARE_SIZE;
     }
 
 /*    private void addBees(){
@@ -64,32 +119,24 @@ public class GardenController {
         }
     }
 
-*//*    private void removeFlower(Flower flower){
-    }
-
-    public double beeGetX(){
-    }
-
-    public double beeGetY(){
-    }
-
-
-    public double flowerGetX(){
-    }
-
-    public double flowerGetY(){
-    }
-    */
+*/
 
 
 
     //create imageView objects
 
 
-    public void loadGarden(){
-        theGarden = new Pane();
+    @FXML
+    public void initialize(){
+//        theGarden = new Pane();
+        controller = this;
 
+        createSquare();
 
+        createBees();
+        createFlowers();
+
+        theGarden.setFocusTraversable(true);
         //bee.setX() bee.setY()
     }
 
