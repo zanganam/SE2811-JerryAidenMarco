@@ -2,29 +2,35 @@ import javafx.scene.image.Image;
 
 public abstract class Bee {
 
-    private boolean die;
+    private int x,y;
+    protected boolean die;
     protected int health;
     protected Flower flower;
-    protected String FilePath;
-    private Image image;
+    protected Image image;
 
 
-    public Bee(boolean die, int health, Image image){
-        this.image = image;
+    public Bee(int x, int y, boolean die, int health, Image image){
+        this.x = x;
+        this.y = y;
         this.die = die;
         this.health = health;
+        this.image = image;
+
+    }
+
+    public Bee() {
     }
 
     public void setDie(boolean die){
-        this.die = die;
+        this.die = false;
     }
 
     public void die(){
         die = true;
     }
 
-    public void setHealth(int health){
-        this.health = health;
+    public void setHealth(){
+        this.health = 10;
     }
 
     public int getHealth(int health){
@@ -39,15 +45,25 @@ public abstract class Bee {
         health+= flowerHealing;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getX(){
+        return x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getY(){
+        return y;
+    }
+
     public abstract void move();
 
-    public Image getImage(){
-        return image;
-    }
-
-    public Bee(String filePath){
-        this.image = new Image(filePath);
-    }
+    public abstract void setImage();
 
 
 

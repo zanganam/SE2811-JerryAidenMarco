@@ -1,11 +1,16 @@
+import javafx.scene.image.Image;
+
 public class RandomBee extends Bee{
 
-    public RandomBee(String filePath) {
-        super(filePath);
-    }
+    protected Image image;
 
     @Override
     public void move() {
 
+    }
+
+    @Override
+    public void setImage() {
+        image = new Image("images/garden_jpgs/bee-3.jpg");
     }
 }

@@ -15,6 +15,18 @@ public class GardenController {
     private Pane theGarden;
 
 
+    private void createBee(){
+        for (int index = 0; index < 7; index++){
+            Bee bee;
+            if (index<=3){
+                bee = new LineBee();
+            } else {
+                bee = new RandomBee();
+            }
+            bees.add(bee);
+        }
+    }
+
 /*    private void addBees(){
         for (int index = 0; index<10; index++){
             Bee bee;
