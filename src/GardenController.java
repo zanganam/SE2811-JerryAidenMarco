@@ -3,16 +3,24 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
 
 import java.util.List;
 
 public class GardenController {
 
+    public static final int SQUARE_SIZE = 700;
     private List<Flower> flowers;
     private List<Bee> bees;
 
     @FXML
     private Pane theGarden;
+
+    public static void addChild(Rectangle rectangle) {
+    }
+
+    public static void tryMovePiece(Square square) {
+    }
 
 
     private void createBee(){
