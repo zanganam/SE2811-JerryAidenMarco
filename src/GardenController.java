@@ -1,4 +1,5 @@
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -6,6 +7,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -126,18 +128,22 @@ public class GardenController {
 
     private void addElements() {
         for(int i = 0; i < bees.size(); i++) {
-            VBox pane = new VBox();
+            StackPane pane = new StackPane();
             ImageView beeImage = new ImageView();
+            Label health = new Label();
 
             beeImage.setImage(bees.get(i).getImage());
             beeImage.setFitHeight(30);
             beeImage.setFitWidth(30);
-            Rectangle healtbar = new Rectangle(200.0, 50.0, Color.BLUE);
-            pane.setSpacing(5);
-            pane.getChildren().add(healtbar);
-            pane.getChildren().add(beeImage);
 
-            garden.add(beeImage,bees.get(i).getY(),bees.get(i).getX());
+            health.setText(String.valueOf(bees.get(i).getHealth()));
+            health.setMinSize(100,100);
+
+            pane.getChildren().add(health);
+            pane.getChildren().add(beeImage);
+            pane.setAlignment(Pos.BOTTOM_LEFT);
+
+            garden.add(pane,bees.get(i).getY(),bees.get(i).getX());
         }
 
         for(int i = 0; i < flowers.size(); i++) {
@@ -159,20 +165,19 @@ public class GardenController {
     public void onKeyPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.UP || keyEvent.getCode() == KeyCode.RIGHT
                 || keyEvent.getCode() == KeyCode.DOWN || keyEvent.getCode() == KeyCode.LEFT) {
-            for (int index = 0; index < bees.size(); index++) {
-                Bee bee = bees.get(index);
-                bee.move();
-                bee.changeHealth(1);
-                if (bee.getHealth() <= 0) {
-                    bee.die();
-                    bees.remove(bee);
+            if (bees.size() > 0) {
+                for (int index = 0; index < bees.size(); index++) {
+                    Bee bee = bees.get(index);
+                    bee.move();
+                    bee.changeHealth(1);
+                    if (bee.getHealth() <= 0) {
+                        bee.die();
+                        bees.remove(bee);
+                    }
+                    refresh();
                 }
-                refresh();
+                collision();
             }
-            System.out.println("X: " + bees.get(bees.size()-1).getX());
-            System.out.println("Y: " + bees.get(bees.size()-1).getY());
-            System.out.println("++++++++++++++++++++++++++++++++++++++");
-            collision();
         }
     }
 
