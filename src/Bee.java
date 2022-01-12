@@ -2,21 +2,25 @@ import javafx.scene.image.Image;
 
 public abstract class Bee {
 
-    protected boolean die;
+    private boolean die;
     protected int health;
-    protected int energy;
     protected Flower flower;
     protected String FilePath;
     private Image image;
 
 
+    public Bee(boolean die, int health, Image image){
+        this.image = image;
+        this.die = die;
+        this.health = health;
+    }
 
     public void setDie(boolean die){
         this.die = die;
     }
 
-    public void die(boolean die){
-        this.die = true;
+    public void die(){
+        die = true;
     }
 
     public void setHealth(int health){

@@ -12,4 +12,8 @@ public class LineBee extends Bee{
     public LineBee(String filePath){
         super(filePath);
     }
+
+    public void setImage(Image image) {
+        this.image = "images/garden_jpgs/bee-1.jpg";
+    }
 }
