@@ -2,6 +2,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 
 import java.util.List;
 
@@ -11,14 +12,14 @@ public class GardenController {
     private List<Bee> bees;
 
     @FXML
-    private GridPane gridPane;
+    private Pane theGarden;
 
 
-    private void addBees(){
+/*    private void addBees(){
         for (int index = 0; index<10; index++){
             Bee bee;
             if (index<=4){
-                bee = new LineBee("images/garden_jpgs/bee-1.jpg");
+                bee = new LineBee("images/garden_jpgs/bee-1.jpg", image);
             } else {
                 bee = new RandomBee("images/garden_jpgs/bee-2.jpg");
             }
@@ -43,7 +44,7 @@ public class GardenController {
         }
     }
 
-/*    private void removeFlower(Flower flower){
+*//*    private void removeFlower(Flower flower){
     }
 
     public double beeGetX(){
@@ -66,15 +67,8 @@ public class GardenController {
 
 
     public void loadGarden(){
-        gridPane = new GridPane();
+        theGarden = new Pane();
 
-
-        addBees();
-        addFlowers();
-        for (int index =0; index<flowers.size(); index++){
-            Flower toPlace = flowers.get(index);
-
-        }
 
         //bee.setX() bee.setY()
     }
@@ -84,7 +78,7 @@ public class GardenController {
             Bee bee = bees.get(index);
             bee.move();
 
-            if()
+
         }
     }
 }

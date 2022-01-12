@@ -2,18 +2,16 @@ import javafx.scene.image.Image;
 
 public class LineBee extends Bee{
 
-    private Image image;
+    private final Image image;
 
     @Override
     public void move() {
 
     }
 
-    public LineBee(String filePath){
+    public LineBee(String filePath, Image image){
         super(filePath);
+        this.image = image;
     }
 
-    public void setImage(Image image) {
-        this.image = "images/garden_jpgs/bee-1.jpg";
-    }
 }
