@@ -7,14 +7,9 @@ public class RandomBee extends Bee{
     @Override
     public void move() {
         int tempx,tempy;
-        tempx = (int)(Math.random()*1);
-        tempy = (int)(Math.random()*1);
+        tempx = (int)(Math.random()*2);
+        tempy = (int)(Math.random()*2);
 
-        System.out.println("tempx = " + tempx);
-        System.out.println("tempy = " + tempy);
-        System.out.println("getX() = " + getX());
-        System.out.println("getY() = " + getY());
-        System.out.println("***********************");
         
         if (getX() == 0) {
             setX((getX()+tempx));

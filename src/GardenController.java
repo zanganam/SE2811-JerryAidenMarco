@@ -56,7 +56,7 @@ public class GardenController {
     }
 
 
-//    private void createSquares() {
+/*//    private void createSquares() {
 //        for(int indRow = 0; indRow < BOARD_WIDTH; indRow++) {
 //            for(int indCol = 0; indCol < BOARD_WIDTH; indCol++) {
 //                Square square = new Square(indCol, indRow);
@@ -107,14 +107,13 @@ public class GardenController {
     }
     private boolean instanceIsValidPosition(int x, int y) {
         return x >= 0 && y >= 0 && x < SQUARE_SIZE && y < SQUARE_SIZE;
-    }
+    }*/
 
 
 
     @FXML
     public void initialize(){
         controller = this;
-//        createSquares();
 
         createBees();
         createFlowers();
@@ -170,6 +169,9 @@ public class GardenController {
                 }
                 refresh();
             }
+            System.out.println("X: " + bees.get(bees.size()-1).getX());
+            System.out.println("Y: " + bees.get(bees.size()-1).getY());
+            System.out.println("++++++++++++++++++++++++++++++++++++++");
             collision();
         }
     }
