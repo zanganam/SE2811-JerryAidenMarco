@@ -5,7 +5,6 @@ public abstract class Bee {
     private int x,y;
     protected boolean die;
     protected int health;
-    protected Flower flower;
     public int damage = 1;
 
 
@@ -14,9 +13,6 @@ public abstract class Bee {
         this.y =y;
         this.die = die;
         this.health = health;
-    }
-
-    private void show(){
     }
 
     public void die(){
