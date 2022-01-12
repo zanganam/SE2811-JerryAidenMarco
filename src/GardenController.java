@@ -22,9 +22,9 @@ public class GardenController {
         for (int index = 0; index < 7; index++){
             Bee bee;
             if (index<=3){
-                bee = new LineBee();
+                bee = new LineBee(0,0, false, 10);
             } else {
-                bee = new RandomBee();
+                bee = new RandomBee(0,0, false, 10);
             }
             bees.add(bee);
         }
@@ -34,9 +34,9 @@ public class GardenController {
         for (int index = 0; index<10; index++){
             Flower flower;
             if ((index%2)==0){
-                flower = new RegenFlower();
+                flower = new RegenFlower(0,0, false, 10);
             } else {
-                flower = new DrainFlower();
+                flower = new DrainFlower(0,0, false, 10);
             }
             flowers.add(flower);
         }
