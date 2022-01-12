@@ -6,7 +6,38 @@ public class RandomBee extends Bee{
 
     @Override
     public void move() {
+        int tempx,tempy;
+        tempx = (int)(Math.random()*1);
+        tempy = (int)(Math.random()*1);
 
+        System.out.println("tempx = " + tempx);
+        System.out.println("tempy = " + tempy);
+        System.out.println("getX() = " + getX());
+        System.out.println("getY() = " + getY());
+        System.out.println("***********************");
+        
+        if (getX() == 0) {
+            setX((getX()+tempx));
+        } else if (getX() == 5) {
+            setX((getX()-tempx));
+        } else {
+            setX(getX()+((int)(Math.random()*2)-1));
+        }
+        if (getY() == 0) {
+            setY((getY()+tempy));
+        } else if (getX() == 5) {
+            setY((getY()-tempy));
+        } else {
+            setY(getY()+((int)(Math.random()*2)-1));
+        }
+    }
+
+    @Override
+    public Image getImage() {
+        if (die) {
+            return null;
+        }
+        return new Image("garden_jpgs/bee-3.jpg");
     }
 
 

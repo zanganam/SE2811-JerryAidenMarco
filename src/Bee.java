@@ -6,6 +6,7 @@ public abstract class Bee {
     protected boolean die;
     protected int health;
     protected Flower flower;
+    public int damage = 1;
 
 
     public Bee(int x, int y, boolean die, int health) {
@@ -20,22 +21,19 @@ public abstract class Bee {
 
     public void die(){
         die = true;
+
     }
 
     public void setHealth(){
         this.health = 10;
     }
 
-    public int getHealth(int health){
+    public int getHealth(){
         return health;
     }
 
-    private void drainHealth(int damage){
+    public void changeHealth(int damage){
         health-=damage;
-    }
-
-    private void regenHealth(int flowerHealing){
-        health+= flowerHealing;
     }
 
     public void setX(int x) {
@@ -54,7 +52,13 @@ public abstract class Bee {
         return y;
     }
 
+    public int getDamage(){
+        return damage;
+    }
+
     public abstract void move();
+
+    public abstract Image getImage();
 
 
 

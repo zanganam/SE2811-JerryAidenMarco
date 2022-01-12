@@ -1,8 +1,11 @@
+import javafx.scene.image.Image;
+
 public abstract class Flower {
 
     protected int x,y;
     protected Boolean die;
     protected int health;
+    public int damage;
 
 
     public Flower(int x, int y, boolean die, int health) {
@@ -48,4 +51,10 @@ public abstract class Flower {
     public int getY(){
         return y;
     }
+
+    public int getDamage(){
+        return damage;
+    }
+
+    public abstract Image getImage();
 }

@@ -13,4 +13,12 @@ public class LineBee extends Bee{
 
     }
 
+    @Override
+    public Image getImage() {
+        if (die) {
+            return null;
+        }
+        return new Image("garden_jpgs/bee-1.jpg");
+    }
+
 }
