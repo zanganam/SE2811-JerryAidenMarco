@@ -10,20 +10,19 @@ public class RandomBee extends Bee{
         tempx = (int)(Math.random()*2);
         tempy = (int)(Math.random()*2);
 
-        
         if (getX() == 0) {
             setX((getX()+tempx));
         } else if (getX() == 5) {
             setX((getX()-tempx));
         } else {
-            setX(getX()+((int)(Math.random()*2)-1));
+            setX(getX()+((int)(Math.random()*3)-1));
         }
         if (getY() == 0) {
             setY((getY()+tempy));
         } else if (getX() == 5) {
             setY((getY()-tempy));
         } else {
-            setY(getY()+((int)(Math.random()*2)-1));
+            setY(getY()+((int)(Math.random()*3)-1));
         }
     }
 
