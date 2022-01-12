@@ -6,16 +6,16 @@ public abstract class Bee {
     protected boolean die;
     protected int health;
     protected Flower flower;
-    protected Image image;
 
 
     public Bee(int x, int y, boolean die, int health) {
+        this.x = x;
+        this.y =y;
+        this.die = die;
+        this.health = health;
     }
 
 
-    public void setDie(boolean die){
-        this.die = false;
-    }
 
     public void die(){
         die = true;

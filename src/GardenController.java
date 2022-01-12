@@ -3,6 +3,7 @@ import javafx.scene.Node;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GardenController {
@@ -10,8 +11,8 @@ public class GardenController {
     private static GardenController controller = null;
 
     public static final int SQUARE_SIZE = 700;
-    private List<Flower> flowers;
-    private List<Bee> bees;
+    private List<Flower> flowers = new ArrayList<>();
+    private List<Bee> bees = new ArrayList<>();
     private Square square;
 
     @FXML

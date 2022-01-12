@@ -1,16 +1,9 @@
-import javafx.scene.Node;
-import javafx.scene.image.Image;
-
 public abstract class Flower {
 
     protected int x,y;
-    protected Image image;
     protected Boolean die;
     protected int health;
 
-    Flower() {
-
-    }
 
     public Flower(int x, int y, boolean die, int health) {
         this.x = x;
@@ -19,11 +12,40 @@ public abstract class Flower {
         this.health = health;
     }
 
-    public void setDie(boolean die){
-        this.die = die;
+
+    public void die(){
+        die = true;
     }
 
-    public void die(boolean die){
-        this.die = true;
+    public void setHealth(){
+        this.health = 10;
+    }
+
+    public int getHealth(int health){
+        return health;
+    }
+
+    private void drainHealth(int damage){
+        health-=damage;
+    }
+
+    private void regenHealth(int flowerHealing){
+        health+= flowerHealing;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getX(){
+        return x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getY(){
+        return y;
     }
 }

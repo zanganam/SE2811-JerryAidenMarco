@@ -5,7 +5,7 @@ public class LineBee extends Bee{
 
     public LineBee(int x, int y, boolean die, int health) {
         super(x, y, die, health);
-        image = new Image("images/garden_jpgs/bee-1.jpg");
+        image = new Image("garden_jpgs/bee-1.jpg");
     }
 
     @Override
