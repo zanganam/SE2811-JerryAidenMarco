@@ -2,6 +2,8 @@ import javafx.scene.image.Image;
 
 public class LineBee extends Bee{
     protected Image image;
+    private boolean isDown;
+    private boolean isRight;
 
     public LineBee(int x, int y, boolean die, int health) {
         super(x, y, die, health);
@@ -10,6 +12,23 @@ public class LineBee extends Bee{
 
     @Override
     public void move() {
+        if (getY() == 0){
+            isDown = true;
+        }
+        if (getX()==0){
+            isRight = true;
+        }
+        if (isDown){
+            setY(getY()+1);
+        } else {
+            setY(getY()-1);
+        }
+        if(isRight){
+            setX(getX()+1);
+        } else {
+            setX(getX()-1);
+        }
+
 
     }
 
