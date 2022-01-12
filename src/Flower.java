@@ -8,10 +8,6 @@ public abstract class Flower {
     protected Boolean die;
     protected int health;
 
-    Flower() {
-
-    }
-
     public Flower(int x, int y, boolean die, int health) {
         this.x = x;
         this.y = y;
@@ -25,5 +21,37 @@ public abstract class Flower {
 
     public void die(boolean die){
         this.die = true;
+    }
+
+    public void setHealth(){
+        this.health = 10;
+    }
+
+    public int getHealth(int health){
+        return health;
+    }
+
+    private void drainHealth(int damage){
+        health-=damage;
+    }
+
+    private void regenHealth(int flowerHealing){
+        health+= flowerHealing;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getX(){
+        return x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getY(){
+        return y;
     }
 }
