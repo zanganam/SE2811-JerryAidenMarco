@@ -5,9 +5,15 @@ public abstract class Flower {
 
     protected Image image;
     protected Boolean die;
+    protected int health;
 
-    public Flower(String filePath) {
-        this.image = new Image(filePath);
+    Flower() {
+
+    }
+
+    public Flower(boolean die, int health) {
+        this.die = die;
+        this.health = health;
     }
 
     public void setDie(boolean die){

@@ -12,7 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("bee_simulator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Garden.fxml"));
         primaryStage.setTitle("Bee Runner 2049");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
