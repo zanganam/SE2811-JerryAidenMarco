@@ -19,10 +19,6 @@ public abstract class Bee {
         die = true;
     }
 
-    public void setHealth(){
-        this.health = 10;
-    }
-
     public int getHealth(){
         return health;
     }
