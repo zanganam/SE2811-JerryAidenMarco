@@ -16,8 +16,6 @@ public class LineBee extends Bee{
 
     @Override
     public void move() {
-        System.out.println("Location: " + getX() + " " + getY());
-
         if (getY() >= 9 && getX() >= 9) {
             setY(8);
             setX(8);
