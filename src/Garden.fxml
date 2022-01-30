@@ -22,7 +22,7 @@
                         <Font name="Poor Richard" size="18.0" />
                     </font>
                 </Label>
-            <GridPane id="garden" fx:id="garden" layoutX="14.0" layoutY="14.0" prefHeight="641.0" prefWidth="870.0" style="-fx-background-color: green;">
+            <GridPane id="garden" fx:id="garden" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="870.0" snapToPixel="false" style="-fx-background-color: green;">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

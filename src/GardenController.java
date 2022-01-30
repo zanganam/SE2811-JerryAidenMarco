@@ -27,9 +27,9 @@ public class GardenController {
         for (int index = 0; index < 7; index++){
             Bee bee;
             if (index<=3){
-                bee = new LineBee((int)Math.floor((Math.random() * 10)),(int)Math.floor((Math.random() * 10)), false, 10);
+                bee = new LineBee((int)Math.floor((Math.random() * 10)),(int)Math.floor((Math.random() * 10)), false, 100);
             } else {
-                bee = new RandomBee((int)Math.floor((Math.random() * 10)),(int)Math.floor((Math.random() * 10)), false, 10);
+                bee = new RandomBee((int)Math.floor((Math.random() * 10)),(int)Math.floor((Math.random() * 10)), false, 100);
             }
             bees.add(bee);
         }
@@ -39,9 +39,9 @@ public class GardenController {
         for (int index = 0; index<10; index++){
             Flower flower;
             if ((index%2)==0){
-                flower = new RegenFlower((int)Math.floor((Math.random() * 10)),(int)Math.floor((Math.random() * 10)), false, 10);
+                flower = new RegenFlower((int)Math.floor((Math.random() * 10)),(int)Math.floor((Math.random() * 10)), false, 100);
             } else {
-                flower = new DrainFlower((int)Math.floor((Math.random() * 10)),(int)Math.floor((Math.random() * 10)), false, 10);
+                flower = new DrainFlower((int)Math.floor((Math.random() * 10)),(int)Math.floor((Math.random() * 10)), false, 100);
             }
             flowers.add(flower);
         }

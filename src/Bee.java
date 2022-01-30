@@ -10,7 +10,7 @@ public abstract class Bee {
 
     public Bee(int x, int y, boolean die, int health) {
         this.x = x;
-        this.y =y;
+        this.y = y;
         this.die = die;
         this.health = health;
     }
